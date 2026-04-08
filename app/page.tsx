@@ -44,6 +44,18 @@ const menu: MenuItem[] = [
   },
 ];
 
+const lebronBgUrl =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/LeBron_James_%2851959977144%29_%28cropped2%29.jpg/640px-LeBron_James_%2851959977144%29_%28cropped2%29.jpg";
+
+const lebronButtonClassName =
+  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-black/20 px-7 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-cyan-300/60";
+
+const lebronButtonStyle = {
+  backgroundImage: `url(${lebronBgUrl})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+} as const;
+
 export default function Home() {
   return (
     <div className="min-h-full bg-zinc-950 text-zinc-50">
@@ -75,9 +87,10 @@ export default function Home() {
 
         <a
           href="#order"
-          className="inline-flex h-10 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-100"
+          className={`${lebronButtonClassName} h-10 px-5`}
+          style={lebronButtonStyle}
         >
-          Заказать
+          <span className="relative z-10">Заказать</span>
         </a>
       </header>
 
@@ -101,9 +114,10 @@ export default function Home() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#order"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400 px-7 text-sm font-semibold text-zinc-950 transition hover:brightness-110"
+                className={`${lebronButtonClassName} h-12`}
+                style={lebronButtonStyle}
               >
-                Заказать сейчас
+                <span className="relative z-10">Заказать сейчас</span>
               </a>
               <a
                 href="#menu"
@@ -226,9 +240,10 @@ export default function Home() {
                   </div>
                   <a
                     href="#order"
-                    className="inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400 px-5 text-sm font-semibold text-zinc-950 transition hover:brightness-110"
+                    className={`${lebronButtonClassName} h-10 px-5`}
+                    style={lebronButtonStyle}
                   >
-                    Заказать
+                    <span className="relative z-10">Заказать</span>
                   </a>
                 </div>
               </div>
@@ -305,9 +320,10 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="inline-flex h-12 w-full items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-100"
+                  className={`${lebronButtonClassName} h-12 w-full`}
+                  style={lebronButtonStyle}
                 >
-                  Оформить заказ
+                  <span className="relative z-10">Оформить заказ</span>
                 </button>
                 <div className="text-xs leading-5 text-zinc-300">
                   Нажимая «Оформить заказ», ты соглашаешься на обработку данных.
